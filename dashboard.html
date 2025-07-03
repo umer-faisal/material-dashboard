@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="shortcut icon" href="assest/dashboard.png" type="image/x-icon">
+  <title>Material Delivery Forecast</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="  max-w-7xl mx-auto p-4 md:p-8 bg-white rounded-lg shadow border border-gray-300">
+    <!-- Header -->
+    <div class="flex items-center justify-between bg-blue-400 text-white px-4 py-3 rounded-t-md">
+      <h2 class="text-lg font-semibold">Material Delivery Forecast</h2>
+      <div class="space-x-2">
+        <button class="bg-white text-gray-800 text-sm px-3 py-1 rounded shadow">Last 3 Months</button>
+        <button class="bg-white text-gray-800 text-sm px-3 py-1 rounded shadow">Next 3 Months</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto">
+      <table class=" min-w-[900px] w-full table-fixed text-sm text-center border-t border-gray-300">
+        <!-- Header Rows -->
+        <thead>
+          <tr class="bg-gray-100 text-gray-800">
+            <th class="border px-2 py-2 w-24">Material</th>
+            <th colspan="3" class="border px-2 py-2">Last 3 Months (Actual Delivery)</th>
+            <th colspan="3" class="border px-2 py-2">Next 3 Months (Projection)</th>
+            <th class="border px-2 py-2 w-20">Difference</th>
+            <th class="border px-2 py-2 w-24">Actions</th>
+          </tr>
+          <tr class="bg-gray-50">
+            <th></th>
+            <th class="border px-2 py-1">April</th>
+            <th class="border px-2 py-1">May</th>
+            <th class="border px-2 py-1">June</th>
+            <th class="border px-2 py-1">July</th>
+            <th class="border px-2 py-1">August</th>
+            <th class="border px-2 py-1">September</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <!-- Nut Row -->
+        <tbody>
+          <tr>
+            <td class="border px-2 py-1 font-semibold">Nut</td>
+            <td class="border px-2 py-1">3,000</td>
+            <td class="border px-2 py-1">25,000</td>
+            <td class="border px-2 py-1">24,000</td>
+            <td class="border px-2 py-1">25,000 <span class="bg-yellow-300 text-xs px-1 rounded ml-1">PEAK</span></td>
+            <td class="border px-2 py-1">25,000 <span class="bg-yellow-300 text-xs px-1 rounded ml-1">PEAK</span></td>
+            <td class="border px-2 py-1">25,000 <span class="bg-yellow-300 text-xs px-1 rounded ml-1">PEAK</span></td>
+            <td class="border px-2 py-1 text-green-600 font-semibold">+5,000</td>
+            <td class="border px-2 py-1 space-x-2">
+              <button title="Edit" class="text-blue-600 hover:text-blue-800"><i class="fa-solid fa-pen-to-square" style="color: #5997f6;"></i></button>
+              <button title="Delete" class="text-red-600 hover:text-red-800"><i class="fa-solid fa-trash" style="color: #da3746;"></i></button>
+            </td>
+          </tr>
+
+          <!-- Actual Supply Row -->
+          <tr class="bg-gray-50">
+            <td class="border px-2 py-1 font-medium">Actual Supply</td>
+            <td colspan="3" class="border px-2 py-1 bg-gray-100 text-gray-500">-</td>
+            <td class="border px-2 py-1">20,000</td>
+            <td class="border px-2 py-1">20,000</td>
+            <td class="border px-2 py-1">15,000</td>
+            <td class="border px-2 py-1 text-red-600 font-semibold">-10,000</td>
+            <td class="border px-2 py-1">
+              <button class="bg-green-600 text-white text-sm px-3 py-1 rounded hover:bg-green-700"><i class="fa-solid fa-check" style="color: #fafcff;"></i>Confirm</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="max-w-6xl mx-auto bg-white shadow-md rounded-md p-6">
+    <!-- Title -->
+    <div class="flex items-center mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414L8.414 13H6v-2.414l7.293-7.293a1 1 0 011.414 0zM4 16h12a1 1 0 110 2H4a1 1 0 110-2z" clip-rule="evenodd" />
+      </svg>
+      <h2 class="font-semibold text-lg text-black">Enter Actual Supply (Vendor Only)</h2>
+    </div>
+
+    <!-- Input Row -->
+    <div class="flex flex-wrap items-center gap-4">
+      <!-- July -->
+      <div class="flex flex-col">
+        <label class="text-sm font-medium text-gray-700 mb-1">July</label>
+        <input type="number" value="20000" class="border rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- August -->
+      <div class="flex flex-col">
+        <label class="text-sm font-medium text-gray-700 mb-1">August</label>
+        <input type="number" value="20000" class="border rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- September -->
+      <div class="flex flex-col">
+        <label class="text-sm font-medium text-gray-700 mb-1">September</label>
+        <input type="number" value="15000" class="border rounded-md px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- Save Button -->
+      <button class="mt-5 md:mt-6 bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded-md flex items-center px-4 py-3 w-24">
+        <i class="fa-solid fa-floppy-disk mr-2"></i>
+        Save
+      </button>
+      </div>
+     </div>
+    </div>
+  </div>
+</body>
+</html>
