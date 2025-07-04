@@ -80,9 +80,7 @@
       <div class="max-w-6xl mx-auto bg-white shadow-md rounded-md p-6">
     <!-- Title -->
     <div class="flex items-center mb-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-black mr-2" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414L8.414 13H6v-2.414l7.293-7.293a1 1 0 011.414 0zM4 16h12a1 1 0 110 2H4a1 1 0 110-2z" clip-rule="evenodd" />
-      </svg>
+      <i class="fa-solid fa-pen mr-2"></i>
       <h2 class="font-semibold text-lg text-black">Enter Actual Supply (Vendor Only)</h2>
     </div>
 
@@ -111,9 +109,37 @@
         <i class="fa-solid fa-floppy-disk mr-2"></i>
         Save
       </button>
+
+
+      <button onclick="logout()">Logout</button>
       </div>
      </div>
     </div>
   </div>
+
+  <script>
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    alert("Please login first!");
+    window.location.href = "login.html";
+  }
+
+  // Optional: You can also fetch user data here
+  // fetch("http://localhost:5000/api/protected", {
+  //   headers: {
+  //     Authorization: `Bearer ${token}`
+  //   }
+  // }).then(res => res.json()).then(data => {
+  //   console.log("Protected data:", data);
+  // });
+
+
+   function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+  }
+  
+</script>
 </body>
 </html>
