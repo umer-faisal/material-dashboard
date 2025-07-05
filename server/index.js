@@ -20,5 +20,5 @@ mongoose.connect(process.env.MONGO_URL, {
   useUnifiedTopology: true
 }).then(() => {
   console.log('MongoDB connected');
-  app.listen(5000, () => console.log('Server running on http://localhost:5000'));
+  app.listen(5000, () => ('Server running on http://material-dashboard-production-d2e9.up.railway.app'));
 }).catch((err) => console.log('Mongo Error:', err));
